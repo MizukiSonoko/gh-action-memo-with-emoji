@@ -1,5 +1,5 @@
 name: action-with-emoji
-description: Some actions when commit message contains specific emoji like :imp: 
+description: 'Some actions when commit message contains specific emoji like :imp:'
 author: "Mizuki Sonoko <sonoko@mizuki.io>"
 branding:
   icon: 'shopping-bag'
