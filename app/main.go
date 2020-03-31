@@ -2,12 +2,13 @@ package main
 
 import (
 	"encoding/json"
+	"context"
 	"io/ioutil"
 	"log"
 	"os"
-	"fmt"
-
+	
 	"github.com/google/go-github/v30/github"
+	"golang.org/x/oauth2"
 )
 
 func main() {
@@ -33,5 +34,20 @@ func main() {
 		log.Fatalf("To unmarshal payload is failed err:%s", err)
 	}
 
-	fmt.Printf("[test] commit is %s", event.HeadCommit.Message)
+	var client *github.Client
+	if token := os.Getenv("GITHUB_TOKEN"); token != "" {
+		ctx := context.Background()
+		ts := oauth2.StaticTokenSource(
+			&oauth2.Token{
+				AccessToken: token,
+			},
+		)
+		tc := oauth2.NewClient(ctx, ts)
+		client = github.NewClient(tc)
+	}
+
+	ret := Action(client, event)
+	if ret != nil{
+		log.Fatalf("Action is failed err:%s", err)
+	}
 }
