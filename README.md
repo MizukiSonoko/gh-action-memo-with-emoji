@@ -36,11 +36,15 @@ $ git commit -m":imp: add temporary document"
 $ git push origin master
 ```
 
+### Third When emoji is IMP
+
+Create issue
+
 # Current supported emoji
-- :imp:
+- :imp: `:imp:`
 
 # Will supported emoji
-- :tada:
-- :fire:
-- :books:
-- :bug:
+- :tada: `:tada:`
+- :fire: `:fire:`
+- :books: `:books:`
+- :bug: `:bug:`
