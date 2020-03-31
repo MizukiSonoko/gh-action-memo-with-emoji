@@ -2,11 +2,12 @@
 
 Some actions when commit message's prefx is emoji
 
-# How to use
+# How to use  
+  
+### First  
+Add `mizukisonoko/gh-action-memo-with-emoji@master` to your workflows yaml  
 
-### First
-Add `mizukisonoko/gh-action-memo-with-emoji@master` to your workflows yaml
-```
+```yml
 name: my actions in own repository
 on:
   push:
@@ -28,8 +29,18 @@ jobs:
 ### Second  
   
 commit & push  
-```
+
+```shell
 $ git add code.go
 $ git commit -m":imp: add temporary document"
 $ git push origin master
 ```
+
+# Current supported emoji
+- :imp:
+
+# Will supported emoji
+- :tada:
+- :fire:
+- :books:
+- :bug:
