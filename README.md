@@ -49,3 +49,7 @@ Create issue
 - :fire: `:fire:`
 - :books: `:books:`
 - :bug: `:bug:`
+
+# License
+
+MIT
