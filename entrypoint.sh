@@ -1,5 +1,6 @@
 #!/bin/sh -l
 
+echo "--"
 ls /
 echo "--"
 ls /app
