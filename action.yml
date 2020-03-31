@@ -1,8 +1,8 @@
-name: writing-with-emoji
-description: Post issue when commit message contains specific emoji like :imp: 
+name: action-with-emoji
+description: Some actions when commit message contains specific emoji like :imp: 
 author: "Mizuki Sonoko <sonoko@mizuki.io>"
 branding:
-  icon: 'pen-tool'
+  icon: 'shopping-bag'
   color: 'purple'
 runs:
   using: 'docker'
