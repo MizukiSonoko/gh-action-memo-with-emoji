@@ -48,6 +48,6 @@ func main() {
 
 	ret := Action(client, event)
 	if ret != nil{
-		log.Fatalf("Action is failed err:%s", err)
+		log.Fatalf("Action is failed err:%s", ret)
 	}
 }
