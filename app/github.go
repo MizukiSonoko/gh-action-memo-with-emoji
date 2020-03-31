@@ -55,7 +55,7 @@ func makeIssue(client *github.Client, event github.PushEvent) error {
 	issue := new(github.IssueRequest)
 	issue.Title = &title
 	issue.Body = &content
-	issue.Assignee = event.HeadCommit.Author.Name
+	issue.Assignee = "["+event.HeadCommit.Author.Name+"]"
 	if _, _, err := client.Issues.Create(ctx, 
 		*event.Repo.Owner.Name, 
 		*event.Repo.Name, issue); err != nil {
