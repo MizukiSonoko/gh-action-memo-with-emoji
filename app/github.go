@@ -51,6 +51,7 @@ func makeIssue(client *github.Client, event github.PushEvent) error {
 	content :=
 		fmt.Sprintf("\nI(%s) make Technical debt\n ----- \n%s\n ----- \n I give you my word that I clear my debts.",
 			*event.HeadCommit.Author.Name, comment)
+	fmt.Printf("[test] content:%s\n", content)
 	assignees := []string{ *event.HeadCommit.Author.Name }
 	issue := new(github.IssueRequest)
 	issue.Title = &title
