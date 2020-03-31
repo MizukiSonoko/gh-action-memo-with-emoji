@@ -1,9 +1,5 @@
 name: my actions in own repository
-on:
-  push:
-    branches: [ master ]
-  pull_request:
-    branches: [ master ]
+on: [push]
 jobs:
   build:
     runs-on: ubuntu-latest
