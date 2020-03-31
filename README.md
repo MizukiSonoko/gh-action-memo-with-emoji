@@ -20,7 +20,7 @@ jobs:
     - uses: actions/checkout@v2
 
 
-    - uses: 'mizukisonoko/gh-action-memo-with-emoji@master'
+    - uses: 'mizukisonoko/gh-action-with-emoji@master'
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
