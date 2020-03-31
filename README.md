@@ -39,6 +39,7 @@ $ git push origin master
 ### Third When emoji is IMP
 
 Create issue
+![issue](https://github.com/MizukiSonoko/gh-action-memo-with-emoji/tree/master/images/img.png)
 
 # Current supported emoji
 - :imp: `:imp:`
