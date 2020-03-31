@@ -1,4 +1,12 @@
 #!/bin/sh -l
 
-/app/gen-memo
+ls /
+echo "--"
+ls /app
+echo "--"
+ls .
+echo "--"
+ls ./app
+
+/gen-memo
 
