@@ -33,5 +33,5 @@ func main() {
 		log.Fatalf("To unmarshal payload is failed err:%s", err)
 	}
 
-	fmt.Printf("[test] commit is %s", event.HeadCommit.String())
+	fmt.Printf("[test] commit is %s", event.HeadCommit.Message)
 }
