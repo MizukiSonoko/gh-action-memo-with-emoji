@@ -7,5 +7,6 @@ RUN ls /app
 FROM alpine
 WORKDIR /app
 COPY --from=build /app /
+RUN ls /app
 ADD entrypoint.sh /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
