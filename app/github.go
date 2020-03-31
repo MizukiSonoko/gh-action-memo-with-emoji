@@ -49,7 +49,7 @@ func makeIssue(client *github.Client, event github.PushEvent) error {
 	comment := removeEmoji(*event.HeadCommit.Message)
 	title := fmt.Sprintf("[Swear] %s", comment)
 	content :=
-		fmt.Sprintf("\n\nI(%s) make Technical debt in %s\n\n ----- \n*%s*\n\n ----- \n I give you my word that I clear my debts.\n Date:%s",
+		fmt.Sprintf("\n\nI(%s) make Technical debt in %s\n\n ----- \n**%s**\n\n ----- \n I give you my word that I clear my debts.\n\t\tDate: %s",
 			*event.HeadCommit.Author.Name, *event.HeadCommit.URL,
 			comment,
 			event.HeadCommit.Timestamp.Format("2006/Jan/2 15:04:05"))
