@@ -3,5 +3,5 @@
 ls 
 pwd
 
-./gen-memo
+./app/gen-memo
 
