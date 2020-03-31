@@ -51,11 +51,11 @@ func makeIssue(client *github.Client, event github.PushEvent) error {
 	content :=
 		fmt.Sprintf("\nI(%s) make Technical debt\n ----- \n%s\n ----- \n I give you my word that I clear my debts.",
 			*event.HeadCommit.Author.Name, comment)
-
+	assignee := "["+*event.HeadCommit.Author.Name+"]"
 	issue := new(github.IssueRequest)
 	issue.Title = &title
 	issue.Body = &content
-	issue.Assignee = "["+event.HeadCommit.Author.Name+"]"
+	issue.Assignee = &assignee
 	if _, _, err := client.Issues.Create(ctx, 
 		*event.Repo.Owner.Name, 
 		*event.Repo.Name, issue); err != nil {
