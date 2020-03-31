@@ -1,0 +1,9 @@
+name: writing-with-emoji
+description: Post issue when commit message contains specific emoji like :imp: 
+author: "Mizuki Sonoko <sonoko@mizuki.io>"
+branding:
+  icon: 'pen-tool'
+  color: 'purple'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
