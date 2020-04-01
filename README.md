@@ -43,6 +43,10 @@ Create issue
 
 # Current supported emoji
 - :imp: `:imp:`
+Make an issue about this commit
+
+- :no_entry: `:no_entry:`
+Cancel job
 
 # Will supported emoji
 - :tada: `:tada:`
