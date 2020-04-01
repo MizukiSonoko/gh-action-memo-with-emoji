@@ -37,17 +37,17 @@ $ git push origin master
 ```
 
 ### Third When emoji is IMP
-
-Create issue
+  
+Created an issue   
 ![issue](https://raw.githubusercontent.com/MizukiSonoko/gh-action-with-emoji/master/images/img.png)
 
 # Current supported emoji
-- :imp: `:imp:`
-Make an issue about this commit
-
-- :no_entry: `:no_entry:`
-Cancel job
-
+- :imp: `:imp:`  
+Make an issue about this commit  
+  
+- :no_entry: `:no_entry:`  
+Cancel job  
+  
 # Will supported emoji
 - :tada: `:tada:`
 - :fire: `:fire:`
