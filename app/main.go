@@ -22,6 +22,11 @@ func main() {
 		log.Fatal("GITHUB_EVENT_PATH is empty, but it's invalid")
 	}
 
+	runId := os.Getenv("GITHUB_RUN_ID")
+	if eventPath == "" {
+		log.Fatal("GITHUB_EVENT_PATH is empty, but it's invalid")
+	}
+
 	payload, err := ioutil.ReadFile(eventPath)
 	if err != nil {
 		log.Fatalf("To read file(path:%s) is failed err:%s ", eventPath, err)
@@ -46,7 +51,8 @@ func main() {
 		client = github.NewClient(tc)
 	}
 
-	ret := Action(client, event)
+	// ToDo: use context
+	ret := Action(client, runId, event)
 	if ret != nil{
 		log.Fatalf("Action is failed err:%s", ret)
 	}

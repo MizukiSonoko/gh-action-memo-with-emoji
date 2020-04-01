@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"regexp"
 	"strings"
+	"strconv"
 	"context"
 
 	"github.com/google/go-github/v30/github"
@@ -15,7 +16,7 @@ var (
 	ctx = context.Background()
 )
 
-func Action(client *github.Client, event github.PushEvent) error {
+func Action(client *github.Client, runId string, event github.PushEvent) error {
 	message := *event.HeadCommit.Message
 	emoji, contains := parseMessage(message)
 	// If message dose not contain emoji, ignore this commit.
@@ -26,6 +27,8 @@ func Action(client *github.Client, event github.PushEvent) error {
 	switch emoji {
 	case "imp":
 		return makeIssue(client, event)
+	case "no_entry":
+		return cancelWorkflowAction(client, runId, event)
 	}
 	return nil
 }
@@ -64,4 +67,16 @@ func makeIssue(client *github.Client, event github.PushEvent) error {
 		return fmt.Errorf("to create an issue is failed err:%s", err)
 	}
 	return nil
+}
+
+func cancelWorkflowAction(client *github.Client,
+	runId string, event github.PushEvent) error{
+	id, err := strconv.Atoi(runId)
+	if err != nil{
+		return fmt.Errorf("to convert runId is failed err:%s", err)
+	}
+	_, err = client.Actions.CancelWorkflowRunByID(ctx, 
+		*event.Repo.Owner.Name, 
+		*event.Repo.Name, int64(id))
+	return err
 }
