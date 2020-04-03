@@ -85,6 +85,7 @@ func cancelWorkflowAction(client *github.Client,
 }
 
 func sendNotifyToSlack(client *github.Client,event github.PushEvent) error{
+	fmt.Println("[%s]\n",os.Getenv("INPUT_SLACK_WEBHOOK_URL"))
 	if url := os.Getenv("INPUT_SLACK_WEBHOOK_URL"); url != "" {
 		fmt.Println("url is %s\n", url)
 	}else{
