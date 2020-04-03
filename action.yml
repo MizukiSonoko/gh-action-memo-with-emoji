@@ -1,6 +1,11 @@
 name: action-with-emoji
 description: 'Some actions when commit message contains specific emoji like :imp:'
 author: "Mizuki Sonoko <sonoko@mizuki.io>"
+inputs:
+  slack_webhook_url:
+    description: 'Slcak webhook access point'
+    required: false
+    default: ''
 branding:
   icon: 'shopping-bag'
   color: 'purple'
