@@ -1,3 +1,3 @@
 #!/bin/sh -l
 
-/gen-memo
+/action-app

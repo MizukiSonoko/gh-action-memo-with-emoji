@@ -1,5 +1,5 @@
 
-APP=gen-memo
+APP=action-app
 OPT=CGO_ENABLED=0 GOOS=linux
 
 all:
