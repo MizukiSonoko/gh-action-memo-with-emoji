@@ -1,6 +1,7 @@
 package main
 
 import (
+	"os"
 	"fmt"
 	"regexp"
 	"strings"
@@ -29,6 +30,8 @@ func Action(client *github.Client, runId string, event github.PushEvent) error {
 		return makeIssue(client, event)
 	case "no_entry":
 		return cancelWorkflowAction(client, runId, event)
+	case "mega":
+		return sendNotifyToSlack(client, event)
 	}
 	return nil
 }
@@ -79,4 +82,13 @@ func cancelWorkflowAction(client *github.Client,
 		*event.Repo.Owner.Name, 
 		*event.Repo.Name, int64(id))
 	return err
+}
+
+func sendNotifyToSlack(client *github.Client,event github.PushEvent) error{
+	if url := os.Getenv("INPUT_SLACK_WEBHOOK_URL"); url != "" {
+		fmt.Println("url is %s\n", url)
+	}else{
+		fmt.Println("pass")
+	}
+	return nil
 }
