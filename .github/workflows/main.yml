@@ -11,3 +11,5 @@ jobs:
     - uses: 'mizukisonoko/gh-action-with-emoji@master'
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        slack_webhook_url: "http:example.com"
