@@ -53,6 +53,7 @@ Cancel job
 - :fire: `:fire:`
 - :books: `:books:`
 - :bug: `:bug:`
+- :mega: `:mega:`
 
 # License
 
